@@ -16,9 +16,9 @@ public class window extends JFrame implements ActionListener {
 	private JPanel contentPane;
 	JButton btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18,btn19 = new JButton();
 	private String[] images = {
-			"i (1).png","i (2).png","i (3).png","i (4).png","i (5).png","i (6).png",
-			"i (7).png","i (8).png","i (9).png","i (10).png","i (11).png","i (12).png",
-			"i (13).png","i (14).png","i (15).png","i (16).png","i (17).png","i (18).png","i (19).png",};
+			"views/i (1).png","views/i (2).png","views/i (3).png","views/i (4).png","views/i (5).png","views/i (6).png",
+			"views/i (7).png","views/i (8).png","views/i (9).png","views/i (10).png","views/i (11).png","views/i (12).png",
+			"views/i (13).png","views/i (14).png","views/i (15).png","views/i (16).png","views/i (17).png","views/i (18).png","views/i (19).png",};
 	
 	Functions f = new Functions();
 
