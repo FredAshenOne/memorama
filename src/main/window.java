@@ -13,24 +13,19 @@ import javax.swing.JButton;
 
 public class window extends JFrame implements ActionListener {
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	JButton btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18,btn19,reset,start = new JButton();
+	private JButton btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18;
+	JButton[] btns = {btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18};
+	JButton reset,start = new JButton();
 	private String[] images = {
 			"views/i (1).png","views/i (2).png","views/i (3).png","views/i (4).png","views/i (5).png","views/i (6).png",
 			"views/i (7).png","views/i (8).png","views/i (9).png","views/i (10).png","views/i (11).png","views/i (12).png",
-			"views/i (13).png","views/i (14).png","views/i (15).png","views/i (16).png","views/i (17).png","views/i (18).png","views/i (19).png",};
-	private boolean[] change = {false,false,false,false,false,
-			false,false,false,false,false,
-			false,false,false,false,false,
-			false,false,false};
-	private JButton[] bttns = {btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn9,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18};
+			"views/i (13).png","views/i (14).png","views/i (15).png","views/i (16).png","views/i (17).png","views/i (18).png","views/i (19).png"};	
+	
 	List<Images> imgs= new ArrayList<Images>();
 	Images imagen;
-	boolean changer;
 	
 	Functions f = new Functions();
 
@@ -44,114 +39,114 @@ public class window extends JFrame implements ActionListener {
 		contentPane.setLayout(null);
 		f.randomizer(images);
 		
-		btn1 = new JButton();
-		btn1.setBounds(10, 101, 140, 165);
-		contentPane.add(btn1);
-		btn1.addActionListener(this);
-		btn1.setIcon(new ImageIcon("views/mad.png"));
+		btns[0] = new JButton();
+		btns[0].setBounds(10, 101, 140, 165);
+		contentPane.add(btns[0]);
+		btns[0].addActionListener(this);
+		btns[0].setIcon(new ImageIcon("views/mad.png"));
 		
 		
-		btn2 = new JButton();
-		btn2.setBounds(160, 101, 140, 165);
-		contentPane.add(btn2);
-		btn2.addActionListener(this);
-		btn2.setIcon(new ImageIcon("views/mad.png"));
+		btns[1] = new JButton();
+		btns[1].setBounds(160, 101, 140, 165);
+		contentPane.add(btns[1]);
+		btns[1].addActionListener(this);
+		btns[1].setIcon(new ImageIcon("views/mad.png"));
 		
-		btn3 = new JButton();
-		btn3.setBounds(309, 101, 140, 165);
-		contentPane.add(btn3);
-		btn3.addActionListener(this);
-		btn3.setIcon(new ImageIcon("views/mad.png"));
+		btns[2] = new JButton();
+		btns[2].setBounds(309, 101, 140, 165);
+		contentPane.add(btns[2]);
+		btns[2].addActionListener(this);
+		btns[2].setIcon(new ImageIcon("views/mad.png"));
 
-		btn4 = new JButton();
-		btn4.setBounds(459, 101, 140, 165);
-		contentPane.add(btn4);
-		btn4.addActionListener(this);
-		btn4.setIcon(new ImageIcon("views/mad.png"));
+		btns[3] = new JButton();
+		btns[3].setBounds(459, 101, 140, 165);
+		contentPane.add(btns[3]);
+		btns[3].addActionListener(this);
+		btns[3].setIcon(new ImageIcon("views/mad.png"));
 
-		btn5 = new JButton();
-		btn5.setBounds(609, 101, 140, 165);
-		contentPane.add(btn5);
-		btn5.addActionListener(this);
-		btn5.setIcon(new ImageIcon("views/mad.png"));
+		btns[4] = new JButton();
+		btns[4].setBounds(609, 101, 140, 165);
+		contentPane.add(btns[4]);
+		btns[4].addActionListener(this);
+		btns[4].setIcon(new ImageIcon("views/mad.png"));
 
-		btn6 = new JButton();
-		btn6.setBounds(759, 101, 140, 165);
-		contentPane.add(btn6);
-		btn6.addActionListener(this);
-		btn6.setIcon(new ImageIcon("views/mad.png"));
+		btns[5] = new JButton();
+		btns[5].setBounds(759, 101, 140, 165);
+		contentPane.add(btns[5]);
+		btns[5].addActionListener(this);
+		btns[5].setIcon(new ImageIcon("views/mad.png"));
 
-		btn7 = new JButton();
-		btn7.setBounds(10, 277, 140, 165);
-		contentPane.add(btn7);
-		btn7.addActionListener(this);
-		btn7.setIcon(new ImageIcon("views/mad.png"));
+		btns[6] = new JButton();
+		btns[6].setBounds(10, 277, 140, 165);
+		contentPane.add(btns[6]);
+		btns[6].addActionListener(this);
+		btns[6].setIcon(new ImageIcon("views/mad.png"));
 
-		btn8 = new JButton();
-		btn8.setBounds(160, 277, 140, 165);
-		contentPane.add(btn8);
-		btn8.addActionListener(this);
-		btn8.setIcon(new ImageIcon("views/mad.png"));
+		btns[7] = new JButton();
+		btns[7].setBounds(160, 277, 140, 165);
+		contentPane.add(btns[7]);
+		btns[7].addActionListener(this);
+		btns[7].setIcon(new ImageIcon("views/mad.png"));
 
-		btn9 = new JButton();
-		btn9.setBounds(310, 277, 140, 165);
-		contentPane.add(btn9);
-		btn9.addActionListener(this);
-		btn9.setIcon(new ImageIcon("views/mad.png"));
+		btns[8] = new JButton();
+		btns[8].setBounds(310, 277, 140, 165);
+		contentPane.add(btns[8]);
+		btns[8].addActionListener(this);
+		btns[8].setIcon(new ImageIcon("views/mad.png"));
 
-		btn10 = new JButton();
-		btn10.setBounds(459, 277, 140, 165);
-		contentPane.add(btn10);
-		btn10.addActionListener(this);
-		btn10.setIcon(new ImageIcon("views/mad.png"));
+		btns[9] = new JButton();
+		btns[9].setBounds(459, 277, 140, 165);
+		contentPane.add(btns[9]);
+		btns[9].addActionListener(this);
+		btns[9].setIcon(new ImageIcon("views/mad.png"));
 
-		btn11 = new JButton();
-		btn11.setBounds(609, 277, 140, 165);
-		contentPane.add(btn11);
-		btn11.addActionListener(this);
-		btn11.setIcon(new ImageIcon("views/mad.png"));
+		btns[10] = new JButton();
+		btns[10].setBounds(609, 277, 140, 165);
+		contentPane.add(btns[10]);
+		btns[10].addActionListener(this);
+		btns[10].setIcon(new ImageIcon("views/mad.png"));
 
-		btn12 = new JButton();
-		btn12.setBounds(759, 277, 140, 165);
-		contentPane.add(btn12);
-		btn12.addActionListener(this);
-		btn12.setIcon(new ImageIcon("views/mad.png"));
+		btns[11] = new JButton();
+		btns[11].setBounds(759, 277, 140, 165);
+		contentPane.add(btns[11]);
+		btns[11].addActionListener(this);
+		btns[11].setIcon(new ImageIcon("views/mad.png"));
 
-		btn13 = new JButton();
-		btn13.setBounds(10, 453, 140, 165);
-		contentPane.add(btn13);
-		btn13.addActionListener(this);
-		btn13.setIcon(new ImageIcon("views/mad.png"));
+		btns[12] = new JButton();
+		btns[12].setBounds(10, 453, 140, 165);
+		contentPane.add(btns[12]);
+		btns[12].addActionListener(this);
+		btns[12].setIcon(new ImageIcon("views/mad.png"));
 
-		btn14 = new JButton();
-		btn14.setBounds(160, 453, 140, 165);
-		contentPane.add(btn14);
-		btn14.addActionListener(this);
-		btn14.setIcon(new ImageIcon("views/mad.png"));
+		btns[13] = new JButton();
+		btns[13].setBounds(160, 453, 140, 165);
+		contentPane.add(btns[13]);
+		btns[13].addActionListener(this);
+		btns[13].setIcon(new ImageIcon("views/mad.png"));
 
-		btn15 = new JButton();
-		btn15.setBounds(310, 453, 140, 165);
-		contentPane.add(btn15);
-		btn15.addActionListener(this);
-		btn15.setIcon(new ImageIcon("views/mad.png"));
+		btns[14] = new JButton();
+		btns[14].setBounds(310, 453, 140, 165);
+		contentPane.add(btns[14]);
+		btns[14].addActionListener(this);
+		btns[14].setIcon(new ImageIcon("views/mad.png"));
 
-		btn16 = new JButton();
-		btn16.setBounds(459, 453, 140, 165);
-		contentPane.add(btn16);
-		btn16.addActionListener(this);
-		btn16.setIcon(new ImageIcon("views/mad.png"));
+		btns[15] = new JButton();
+		btns[15].setBounds(459, 453, 140, 165);
+		contentPane.add(btns[15]);
+		btns[15].addActionListener(this);
+		btns[15].setIcon(new ImageIcon("views/mad.png"));
 
-		btn17 = new JButton();
-		btn17.setBounds(609, 453, 140, 165);
-		contentPane.add(btn17);
-		btn17.addActionListener(this);
-		btn17.setIcon(new ImageIcon("views/mad.png"));
+		btns[16] = new JButton();
+		btns[16].setBounds(609, 453, 140, 165);
+		contentPane.add(btns[16]);
+		btns[16].addActionListener(this);
+		btns[16].setIcon(new ImageIcon("views/mad.png"));
 
-		btn18 = new JButton();
-		btn18.setBounds(759, 453, 140, 165);
-		contentPane.add(btn18);
-		btn18.addActionListener(this);
-		btn18.setIcon(new ImageIcon("views/mad.png"));
+		btns[17] = new JButton();
+		btns[17].setBounds(759, 453, 140, 165);
+		contentPane.add(btns[17]);
+		btns[17].addActionListener(this);
+		btns[17].setIcon(new ImageIcon("views/mad.png"));
 		
 		reset = new JButton();
 		reset.setText("Reset");
@@ -173,66 +168,30 @@ public class window extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==start) {
+			
 			f.randomizer(images);
-			f.start(images,change);
+			f.start(images,btns);
 			reset.setEnabled(true);
+			
 		}else if(e.getSource()==reset){
-			f.restart(bttns);
-		}else if(e.getSource()==btn1) {
-			imgs = f.getImgs();
-			f.painter(0, imgs, btn1);
-		}else if(e.getSource()==btn2) {
-			imgs = f.getImgs();
-			f.painter(1, imgs, btn2);
-		}else if(e.getSource()==btn3) {
-			imgs = f.getImgs();
-			f.painter(2, imgs, btn3);
-		}else if(e.getSource()==btn4) {
-			imgs = f.getImgs();
-			f.painter(3, imgs, btn4);
-		}else if(e.getSource()==btn5) {
-			imgs = f.getImgs();
-			f.painter(4, imgs, btn5);
-		}else if(e.getSource()==btn6) {
-			imgs = f.getImgs();
-			f.painter(5, imgs, btn6);
-		}else if(e.getSource()==btn7) {
-			imgs = f.getImgs();
-			f.painter(6, imgs, btn7);
-		}else if(e.getSource()==btn8) {
-			imgs = f.getImgs();
-			f.painter(7, imgs, btn8);
-		}else if(e.getSource()==btn9) {
-			imgs = f.getImgs();
-			f.painter(8, imgs, btn9);
-		}else if(e.getSource()==btn10) {
-			imgs = f.getImgs();
-			f.painter(9, imgs, btn10);
-		}else if(e.getSource()==btn11) {
-			imgs = f.getImgs();
-			f.painter(10, imgs, btn11);
-		}else if(e.getSource()==btn12) {
-			imgs = f.getImgs();
-			f.painter(11, imgs, btn12);
-		}else if(e.getSource()==btn13) {
-			imgs = f.getImgs();
-			f.painter(12, imgs, btn13);
-		}else if(e.getSource()==btn14) {
-			imgs = f.getImgs();
-			f.painter(13, imgs, btn14);
-		}else if(e.getSource()==btn15) {
-			imgs = f.getImgs();
-			f.painter(14, imgs, btn15);
-		}else if(e.getSource()==btn16) {
-			imgs = f.getImgs();
-			f.painter(15, imgs, btn16);
-		}else if(e.getSource()==btn17) {
-			imgs = f.getImgs();
-			f.painter(16, imgs, btn17);
-		}else if(e.getSource()==btn18) {
-			imgs = f.getImgs();
-			f.painter(17, imgs, btn18);
-		}
+		}else if(e.getSource() == btns[0]) {
+			if(f.checker(imgs)) {
+				System.out.println(a);
+				
 
+			}
+		}else if(e.getSource() == btns[1]) {
+			System.out.println("lo 1!!");
+		}else if(e.getSource() == btns[2]) {
+			System.out.println("lo 2!!");
+		}else if(e.getSource() == btns[3]) {
+			System.out.println("lo 3!!");
+		}else if(e.getSource() == btns[4]) {
+			System.out.println("lo 4!!");
+		}else if(e.getSource() == btns[5]) {
+			System.out.println("lo 5!!");
+		}
+		
 	}
 }
+

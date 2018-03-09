@@ -1,17 +1,30 @@
 package main;
 
+import javax.swing.JButton;
+
 public class Images {
 	
 	private int id;
 	private String url,stat;
-	private boolean swi;
+	private JButton butn;
 	
-	public Images(int id,String url,boolean swi, String stat) {
+	public Images(int id,String url, String stat,JButton butn) {
 		this.id = id;
 		this.url = url;
-		this.swi = swi;
 		this.stat = stat;
+		this.butn = butn;
 	}
+	
+
+	public JButton getButn() {
+		return butn;
+	}
+
+
+	public void setButn(JButton butn) {
+		this.butn = butn;
+	}
+
 
 	public int getId() {
 		return id;
@@ -37,14 +50,6 @@ public class Images {
 		this.stat = stat;
 	}
 
-	public boolean isSwi() {
-		return swi;
-	}
 
-	public void setSwi(boolean swi) {
-		this.swi = swi;
-	}
-	
-	
 
 }
