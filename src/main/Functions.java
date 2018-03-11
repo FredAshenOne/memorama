@@ -29,11 +29,15 @@ public void setImagenes(List<Images> imagenes) {
 	}
 	
 	public void start(String[] str,JButton[] btns) {
-		for(int i=0;i < 9;i++) {
-			Images img = new Images(ids[i],str[i],"cerrada",btns[i]);
-			Images img2 = new Images(ids[i+9],str[i],"cerrada",btns[i+9]);
+        imagenes.clear();
+        Collections.shuffle(Arrays.asList(str));
+        Collections.shuffle(Arrays.asList(btns));
+        for(int i=0;i < 9;i++) {
+		    Images img = new Images(ids[i],str[i],"cerrada",btns[i]);
+			Images img2 = new Images(ids[i+9],secArray(str)[i],"cerrada",btns[i+9]);
 			imagenes.add(img);
-			imagenes.add(img2);	
+			imagenes.add(img2);
+
 		}	
 		Collections.shuffle(imagenes);
 	}
@@ -47,60 +51,73 @@ public void setImagenes(List<Images> imagenes) {
 	
 	public Boolean checker(List<Images> imlist){
 		int x = 0;
+		List<Images> list2 = new ArrayList<>();
 		for(Images imagen:imlist) {
 			if(imagen.getStat()=="abierta"){
 				x++;
+				list2.add(imagen);
 			}
 		}
 		if(x < 2) {
 			return true;
-		}else {
-			return false;
-		}
-	}
+		}else if(x == 2){
+		    for (Images imag: list2){
+		        String url1 = imag.getUrl();
+		        for (Images imag2:list2){
+		            if (url1 == imag2.getUrl()){
+		                imag.setStat("encontrada");
+		                imag2.setStat("encontrada");
+
+                    }else{
+		                imag.setStat("cerrada");
+		                imag2.setStat("cerrada");
+		                imag.getButn().setIcon(new ImageIcon("views/mad.png"));
+                        imag2.getButn().setIcon(new ImageIcon("views/mad.png"));
+                        return false;
+		            }
+                }
+            }
+
+		}else{
+		    return false;
+        }
+        return null;
+    }
 	
-	public void btnfinder(List<Images> list,int x) {
+	public Images btnfinder(List<Images> list,JButton btn) {
 		for(Images imagen:list) {
-			if(imagen.getId() == x) {
-				imagen.getButn().setIcon((new ImageIcon(imagen.getUrl())));
+			if(imagen.getButn() == btn) {
+				return imagen;
 			}
 		}
-		
-		
-	}
-	
-	public void setbackImag(Images im) {
-		im.getButn().setIcon(new ImageIcon("views/mad.png"));
-	}
-	
-	public JButton listobject(List<Images> list,Object object) {
-		for(Images imagen:list) {
-			if(object == imagen.getButn()) {
-				return imagen.getButn();
-			}
-		}
-		
+
+
 		return null;
 	}
-	
+
 	public void painter(Images img) {
 		
 		if(img.getStat()=="cerrada") {
 			img.getButn().setIcon(new ImageIcon(img.getUrl()));
 			img.setStat("abierta");
-		}	
-	}
-	
-	public void getImg(List<Images> imlist,int x) {
-		for(Images imagen:imlist) {
-			if(imagen.getId() == x) {
-				System.out.println("si checa");
-			}
 		}
 	}
-	
-	
-	
+	public void reset(List<Images> list){
+        for(Images imagen:list){
+            imagen.setStat("cerrada");
+            imagen.getButn().setIcon(new ImageIcon("views/mad.png"));
+
+        }
+    }
+
+    public String[] secArray(String[] urls){
+        String[] secArray = new String[9];
+        for (int i=0;i < 9;i++){
+            secArray[i] = urls[i];
+        }
+        System.out.println("este es el segundo arreglo"+secArray);
+        return secArray;
+    }
 }
 	
 	
