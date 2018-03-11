@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 public class Functions {
 int[] ids = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18};
@@ -28,7 +29,8 @@ public void setImagenes(List<Images> imagenes) {
 	
 	}
 	
-	public void start(String[] str,JButton[] btns) {
+	public void start(String[] str,JButton[] btns,JLabel lbl) {
+		lbl.setVisible(false);
         imagenes.clear();
         Collections.shuffle(Arrays.asList(str));
         Collections.shuffle(Arrays.asList(btns));
@@ -42,12 +44,6 @@ public void setImagenes(List<Images> imagenes) {
 		Collections.shuffle(imagenes);
 	}
 	
-	public void restart(JButton[] btns) {
-		for(int i = 0; i < btns.length;i++) {
-			
-			btns[i].setIcon(new ImageIcon("views/mad.png"));
-		}
-	}
 	
 	public Boolean checker(List<Images> imlist){
 		int x = 0;
@@ -69,6 +65,7 @@ public void setImagenes(List<Images> imagenes) {
 		                imag2.setStat("encontrada");
 
                     }else{
+                    	
 		                imag.setStat("cerrada");
 		                imag2.setStat("cerrada");
 		                imag.getButn().setIcon(new ImageIcon("views/mad.png"));
@@ -102,13 +99,15 @@ public void setImagenes(List<Images> imagenes) {
 			img.setStat("abierta");
 		}
 	}
-	public void reset(List<Images> list){
-        for(Images imagen:list){
+	public void reset(List<Images> list,JLabel lbl){
+		lbl.setVisible(false);
+		for(Images imagen:list){
             imagen.setStat("cerrada");
             imagen.getButn().setIcon(new ImageIcon("views/mad.png"));
 
         }
-    }
+
+	}
 
     public String[] secArray(String[] urls){
         String[] secArray = new String[9];
@@ -118,6 +117,20 @@ public void setImagenes(List<Images> imagenes) {
         System.out.println("este es el segundo arreglo"+secArray);
         return secArray;
     }
+    
+    public void win(List<Images> list,JLabel lbl) {
+    	int x=0;
+    	for(Images imagen : list) {
+    		if(imagen.getStat()=="abierta"||imagen.getStat()=="cerrada") {
+    		x++;
+    		}
+    		if(x==0) {
+    			lbl.setVisible(true);
+    		}
+    	}
+    }
 }
+
+
 	
 	

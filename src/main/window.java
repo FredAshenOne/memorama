@@ -11,6 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class window extends JFrame implements ActionListener {
 
@@ -25,6 +28,7 @@ public class window extends JFrame implements ActionListener {
             "views/i (7).png", "views/i (8).png", "views/i (9).png", "views/i (10).png", "views/i (11).png", "views/i (12).png",
             "views/i (13).png", "views/i (14).png", "views/i (15).png", "views/i (16).png", "views/i (17).png", "views/i (18).png", "views/i (19).png"};
     int counter = 0;
+    private JLabel lblGanaste = new JLabel();
     List<Images> imgs = new ArrayList<Images>();
     Images imagen;
 
@@ -151,14 +155,21 @@ public class window extends JFrame implements ActionListener {
 
         reset = new JButton();
         reset.setText("Reset");
-        reset.setBounds(332, 39, 89, 23);
+        reset.setBounds(332, 11, 89, 23);
         reset.setEnabled(false);
         contentPane.add(reset);
         reset.addActionListener(this);
 
         start.setText("Start");
-        start.setBounds(470, 39, 89, 23);
+        start.setBounds(466, 11, 89, 23);
         contentPane.add(start);
+        
+        lblGanaste = new JLabel("GANASTE!!");
+        lblGanaste.setFont(new Font("Yu Gothic UI", Font.ITALIC, 14));
+        lblGanaste.setHorizontalAlignment(SwingConstants.CENTER);
+        lblGanaste.setBounds(332, 45, 224, 28);
+        lblGanaste.setVisible(false);
+        contentPane.add(lblGanaste);
         start.addActionListener(this);
 
 
@@ -170,84 +181,102 @@ public class window extends JFrame implements ActionListener {
         if (e.getSource() == start) {
 
             f.randomizer(images);
-            f.start(images, btns);
+            f.start(images, btns,lblGanaste);
             reset.setEnabled(true);
             Collections.shuffle(f.imagenes);
 
 
         } else if (e.getSource() == reset) {
-            f.reset(f.imagenes);
+            f.reset(f.imagenes,lblGanaste);
         } else if (e.getSource() == btns[0]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[0]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[1]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[1]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[2]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[2]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[3]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[3]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[4]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[4]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[5]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[5]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[6]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[6]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[7]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[7]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[8]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[8]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[9]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[9]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[10]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[10]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[11]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[11]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[12]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[12]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[13]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[13]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[14]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[14]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[15]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[15]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[16]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[16]));
+                f.win(f.imagenes, lblGanaste);
             }
         } else if (e.getSource() == btns[17]) {
             if (f.checker(f.imagenes)) {
                 f.painter(f.btnfinder(f.imagenes, btns[17]));
+                f.win(f.imagenes, lblGanaste);
             }
 
         }
