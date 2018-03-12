@@ -10,7 +10,6 @@ public class Main {
 				try {
 					window frame = new window();
 					frame.setVisible(false);
-
 					Menu frame2 = new Menu();
 					frame2.setVisible(true);
 				} catch (Exception e) {

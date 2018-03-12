@@ -24,26 +24,22 @@ public class window extends JFrame implements ActionListener {
     private JPanel contentPane;
     public JButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17, btn18;
     JButton[] btns = {btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17, btn18};
-    JButton reset;
+    JButton reset,nuevoJuego,regresar;
     public String[] images = {
             "views/i (1).png", "views/i (2).png", "views/i (3).png", "views/i (4).png", "views/i (5).png", "views/i (6).png",
             "views/i (7).png", "views/i (8).png", "views/i (9).png", "views/i (10).png", "views/i (11).png", "views/i (12).png",
             "views/i (13).png", "views/i (14).png", "views/i (15).png", "views/i (16).png", "views/i (17).png", "views/i (18).png", "views/i (19).png"};
     public String[] images2 = {"cr/1.png", "cr/2.png", "cr/3.png", "cr/4.png", "cr/5.png", "cr/6.png", "cr/7.png", "cr/8.png", "cr/9.png",
             "cr/10.png", "cr/11.png", "cr/12.png", "cr/13.png", "cr/14.png", "cr/15.png", "cr/16.png", "cr/17.png", "cr/18.png"};
-    int counter = 0;
-    public String cover = "views/mad.png";
+    public String cover;
     public JLabel lblGanaste = new JLabel();
     List<Images> imgs = new ArrayList<>();
-    Images imagen;
-
     Functions f = new Functions();
     public JPanel pane;
-
     public window() {
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 918, 658);
+        setBounds(100, 100, 928, 658);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -167,6 +163,7 @@ public class window extends JFrame implements ActionListener {
         btns[17].setIcon(new ImageIcon(cover));
 
         reset = new JButton();
+        reset.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 12));
         reset.setText("Reset");
         reset.setBounds(813, 11, 89, 23);
         reset.setEnabled(false);
@@ -180,6 +177,18 @@ public class window extends JFrame implements ActionListener {
         lblGanaste.setBounds(333, 6, 224, 28);
         lblGanaste.setVisible(false);
         contentPane.add(lblGanaste);
+        
+        regresar = new JButton("Return");
+        regresar.setFont(new Font("Yu Gothic Light", Font.PLAIN, 12));
+        regresar.setBounds(813, 587, 89, 23);
+        contentPane.add(regresar);
+        regresar.addActionListener(this);
+        
+        nuevoJuego = new JButton("New Game");
+        nuevoJuego.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 9));
+        nuevoJuego.setBounds(714, 587, 89, 23);
+        contentPane.add(nuevoJuego);
+        nuevoJuego.addActionListener(this);
 
 
     }
@@ -187,10 +196,10 @@ public class window extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println(imgs);
 
         if (e.getSource() == reset) {
             f.reset(imgs, lblGanaste, cover);
+
         } else if (e.getSource() == btns[0]) {
             if (f.checker(imgs, cover, lblGanaste)) {
                 f.painter(f.btnfinder(imgs, btns[0]));
@@ -298,8 +307,9 @@ public class window extends JFrame implements ActionListener {
 
 
         Collections.shuffle(imgs);
+        f.reset(imgs,lblGanaste,cover);
+
 
     }
-
 }
 

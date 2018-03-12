@@ -70,7 +70,6 @@ public class Functions {
     public Images btnfinder(List<Images> list, JButton btn) {
         for (Images imagen : list) {
             if (imagen.getButn() == btn) {
-                System.out.println(imagen.getButn() + "  " + btn);
                 return imagen;
             }
         }
