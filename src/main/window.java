@@ -38,6 +38,7 @@ public class window extends JFrame implements ActionListener {
     List<Images> imgs = new ArrayList<>();
     Functions f = new Functions();
     public JPanel pane;
+
     public window() {
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -292,6 +293,8 @@ public class window extends JFrame implements ActionListener {
             }
 
         }
+
+
     }
 
     public void start(String[] str, JButton[] btns, JLabel lbl, JPanel pane) {

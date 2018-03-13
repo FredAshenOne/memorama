@@ -1,4 +1,7 @@
 package main;
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,7 +24,6 @@ public class Functions {
     public List<Images> getImgs() {
         return imagenes;
     }
-
     public void setImagenes(List<Images> imagenes) {
         this.imagenes = imagenes;
     }
@@ -114,6 +116,8 @@ public class Functions {
         }
     }
 }
+
+
 
 
 	

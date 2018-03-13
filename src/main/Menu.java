@@ -1,6 +1,9 @@
 package main;
 
 
+import jdk.javadoc.internal.doclets.formats.html.SourceToHTMLConverter;
+
+import javax.sound.midi.Soundbank;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -16,10 +19,9 @@ import javax.swing.JRadioButton;
 import java.awt.Font;
 
 public class Menu extends JFrame implements ActionListener {
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
+
+    private static final long serialVersionUID = 1L;
 	window w = new window();
     Functions f = new Functions();
     private JPanel contentPane;
@@ -34,7 +36,7 @@ public class Menu extends JFrame implements ActionListener {
     public Menu() {
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 374, 147);
+        setBounds(100, 100, 394, 167);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
