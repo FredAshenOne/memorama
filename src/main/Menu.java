@@ -1,9 +1,6 @@
 package main;
 
 
-import jdk.javadoc.internal.doclets.formats.html.SourceToHTMLConverter;
-
-import javax.sound.midi.Soundbank;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -18,10 +15,11 @@ import java.awt.event.ActionEvent;
 import javax.swing.JRadioButton;
 import java.awt.Font;
 
+
 public class Menu extends JFrame implements ActionListener {
 
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 	window w = new window();
     Functions f = new Functions();
     private JPanel contentPane;
