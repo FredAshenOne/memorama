@@ -27,54 +27,43 @@ public class Menu extends JFrame implements ActionListener {
 
     JButton start = new JButton();
 
-
     private ButtonGroup select = new ButtonGroup();
     int choice;
-    private JButton cr,mad = new JButton();
+    private JButton cr,mad,marv = new JButton();
 
     public Menu() {
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 270, 185);
+        setBounds(100, 100, 374, 147);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        start = new JButton("Start");
-        start.setEnabled(false);
-        start.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 14));
-        start.addActionListener(this);
-        start.setBounds(81, 11, 89, 23);
-        contentPane.add(start);
+      
 
 
-        JButton mad = new JButton();
-        mad.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                choice = 1;
-                start.setEnabled(true);
-            }
-        });
-        mad.setBounds(22, 41, 109, 100);
+        mad = new JButton();
+        mad.setBounds(20, 11, 109, 100);
         mad.setIcon(new ImageIcon("views/madlogo.png"));
         contentPane.add(mad);
+        mad.addActionListener(this);
 
-        JButton cr = new JButton();
-        cr.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                choice = 2;
-                start.setEnabled(true);
-            }
-        });
-        cr.setBounds(129, 41, 109, 100);
+        cr = new JButton();
+        cr.setBounds(134, 11, 109, 100);
         contentPane.add(cr);
         cr.setIcon(new ImageIcon("cr/logo2.png"));
         setResizable(false);
+        cr.addActionListener(this);
 
         select.add(cr);
         select.add(mad);
         
+        marv = new JButton();
+        marv.setBounds(249, 11, 109, 100);
+        contentPane.add(marv);
+        marv.addActionListener(this);
+        marv.setIcon(new ImageIcon("marv/logo.png"));
         w.regresar.addActionListener(this);
         w.nuevoJuego.addActionListener(this);
 
@@ -83,26 +72,42 @@ public class Menu extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == start) {
-            if (choice == 1) {
+        if (e.getSource() == mad) {
+           
                 w.cover = "views/mad.png";
                 f.randomizer(w.images);
+                choice = 1;
                 w.start(w.images, w.btns, w.lblGanaste, w.pane);
+                Collections.shuffle(f.imagenes);
+                w.reset.setEnabled(true);
+                w.setVisible(true);
+                this.setVisible(false);
 
-            } else if (choice == 2) {
+            } else if (e.getSource() == cr) {
                 w.cover = "cr/logo.png";
+                choice = 2;
                 f.randomizer(w.images2);
                 w.start(w.images2, w.btns, w.lblGanaste, w.pane);
+                Collections.shuffle(f.imagenes);
+                w.reset.setEnabled(true);
+                w.setVisible(true);
+                this.setVisible(false);
+            
+            
 
-            }
+        }else if (e.getSource() == marv) {
+            w.cover = "marv/logo.png";
+            f.randomizer(w.images3);
+            choice = 3;
+            w.start(w.images3, w.btns, w.lblGanaste, w.pane);
             Collections.shuffle(f.imagenes);
             w.reset.setEnabled(true);
             w.setVisible(true);
             this.setVisible(false);
-            
-            
+        
+        
 
-        }else if(e.getSource() == w.regresar) {
+    }else if(e.getSource() == w.regresar) {
         	w.setVisible(false);
         	this.setVisible(true);
         }else if(e.getSource()==w.nuevoJuego) {
@@ -115,6 +120,11 @@ public class Menu extends JFrame implements ActionListener {
                 w.cover = "cr/logo.png";
                 f.randomizer(w.images2);
                 w.start(w.images2, w.btns, w.lblGanaste, w.pane);
+
+            }else if (choice == 3) {
+            	 w.cover = "marv/logo.png";
+                 f.randomizer(w.images3);
+                 w.start(w.images3, w.btns, w.lblGanaste, w.pane);
 
             }
             Collections.shuffle(f.imagenes);

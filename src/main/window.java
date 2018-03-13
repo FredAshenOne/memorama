@@ -31,6 +31,8 @@ public class window extends JFrame implements ActionListener {
             "views/i (13).png", "views/i (14).png", "views/i (15).png", "views/i (16).png", "views/i (17).png", "views/i (18).png", "views/i (19).png"};
     public String[] images2 = {"cr/1.png", "cr/2.png", "cr/3.png", "cr/4.png", "cr/5.png", "cr/6.png", "cr/7.png", "cr/8.png", "cr/9.png",
             "cr/10.png", "cr/11.png", "cr/12.png", "cr/13.png", "cr/14.png", "cr/15.png", "cr/16.png", "cr/17.png", "cr/18.png"};
+    public String[] images3 = {"marv/1.png","marv/2.png","marv/3.png","marv/4.png","marv/5.png","marv/6.png","marv/7.png","marv/8.png","marv/9.png","marv/10.png",
+    		"marv/11.png","marv/12.png","marv/13.png","marv/14.png","marv/15.png","marv/16.png","marv/17.png","marv/18.png"};
     public String cover;
     public JLabel lblGanaste = new JLabel();
     List<Images> imgs = new ArrayList<>();
