@@ -8,9 +8,9 @@ import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JRadioButton;
 import java.awt.Font;
@@ -79,7 +79,6 @@ public class Menu extends JFrame implements ActionListener {
                 choice = 1;
                 w.start(w.images, w.btns, w.lblGanaste, w.pane);
                 Collections.shuffle(f.imagenes);
-                w.reset.setEnabled(true);
                 w.setVisible(true);
                 this.setVisible(false);
 
@@ -89,7 +88,6 @@ public class Menu extends JFrame implements ActionListener {
                 f.randomizer(w.images2);
                 w.start(w.images2, w.btns, w.lblGanaste, w.pane);
                 Collections.shuffle(f.imagenes);
-                w.reset.setEnabled(true);
                 w.setVisible(true);
                 this.setVisible(false);
             
@@ -101,7 +99,6 @@ public class Menu extends JFrame implements ActionListener {
             choice = 3;
             w.start(w.images3, w.btns, w.lblGanaste, w.pane);
             Collections.shuffle(f.imagenes);
-            w.reset.setEnabled(true);
             w.setVisible(true);
             this.setVisible(false);
         
@@ -115,6 +112,7 @@ public class Menu extends JFrame implements ActionListener {
                 w.cover = "views/mad.png";
                 f.randomizer(w.images);
                 w.start(w.images, w.btns, w.lblGanaste, w.pane);
+
 
             } else if (choice == 2) {
                 w.cover = "cr/logo.png";

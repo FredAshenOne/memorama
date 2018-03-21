@@ -35,7 +35,7 @@ public class Functions {
 
 
 
-    public Boolean checker(List<Images> imlist, String cover, JLabel lbl) {
+    public Boolean checker(List<Images> imlist, String cover, JLabel lbl,Timer timer) {
         int x = 0;
         List<Images> list2 = new ArrayList<>();
         for (Images imagen : imlist) {
@@ -53,7 +53,9 @@ public class Functions {
                     if (url1 == imag2.getUrl()) {
                         imag.setStat("encontrada");
                         imag2.setStat("encontrada");
-                        win(imlist, lbl);
+                        win(imlist, lbl,timer);
+                        
+                        
                     } else {
 
                         imag.setStat("cerrada");
@@ -104,7 +106,7 @@ public class Functions {
         return secArray;
     }
 
-    public void win(List<Images> list, JLabel lbl) {
+    public void win(List<Images> list, JLabel lbl,Timer timer) {
         int x = 0;
         for (Images imagen : list) {
             if (imagen.getStat() == "encontrada") {
@@ -112,9 +114,13 @@ public class Functions {
             }
             if (x == 18) {
                 lbl.setVisible(true);
+                timer.cancel();
+                
             }
         }
     }
+
+
 }
 
 
