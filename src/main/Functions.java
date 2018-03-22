@@ -36,7 +36,7 @@ public class Functions {
 
 
 
-    public Boolean checker(List<Images> imlist, String cover,Timer timer) {
+    public Boolean checker(List<Images> imlist, String cover,Timer timer,int contadorm,int contadors,int contadorms) {
         int x = 0;
         List<Images> list2 = new ArrayList<>();
         for (Images imagen : imlist) {
@@ -67,7 +67,7 @@ public class Functions {
                     }
                 }
             }
-            win(imlist,timer);
+            win(imlist,timer,contadorm,contadors,contadorms);
 
         }
         return false;
@@ -107,7 +107,7 @@ public class Functions {
         return secArray;
     }
 
-    public void win(List<Images> list,Timer timer) {
+    public void win(List<Images> list,Timer timer,int contadorm,int contadors,int contadorms) {
         int x = 0;
         for (Images imagen : list) {
             if (imagen.getStat() == "encontrada") {
@@ -115,7 +115,7 @@ public class Functions {
             }
             if (x == 18) {
                 timer.cancel();
-                JOptionPane.showMessageDialog(null,"GANASTE!!");
+                JOptionPane.showMessageDialog(null,"Terminaste!! \n Tu tiempo fue: "+contadorm+":"+contadors+":"+contadorms);
                 
             }
         }

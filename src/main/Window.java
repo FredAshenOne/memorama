@@ -54,6 +54,7 @@ public class Window extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 928, 658);
         contentPane = new JPanel();
+        this.setName("Memorama");
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
@@ -206,90 +207,90 @@ public class Window extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
        if (e.getSource() == btns[0]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[0]));
             }
         } else if (e.getSource() == btns[1]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[1]));
 
             }
         } else if (e.getSource() == btns[2]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[2]));
 
             }
         } else if (e.getSource() == btns[3]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[3]));
 
             }
         } else if (e.getSource() == btns[4]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[4]));
 
             }
         } else if (e.getSource() == btns[5]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[5]));
             }
             
         } else if (e.getSource() == btns[6]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[6]));
             }
         } else if (e.getSource() == btns[7]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[7]));
 
             }
         } else if (e.getSource() == btns[8]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[8]));
 
             }
         } else if (e.getSource() == btns[9]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[9]));
 
             }
         } else if (e.getSource() == btns[10]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[10]));
 
             }
         } else if (e.getSource() == btns[11]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[11]));
 
             }
         } else if (e.getSource() == btns[12]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[12]));
 
             }
         } else if (e.getSource() == btns[13]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[13]));
 
             }
         } else if (e.getSource() == btns[14]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[14]));
 
             }
         } else if (e.getSource() == btns[15]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[15]));
 
             }
         } else if (e.getSource() == btns[16]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[16]));
 
             }
         } else if (e.getSource() == btns[17]) {
-            if (f.checker(imgs, cover,gtimer)) {
+            if (f.checker(imgs, cover,gtimer,contadorm,contadors,contadorms)) {
                 f.painter(f.btnfinder(imgs, btns[17]));
 
             }
