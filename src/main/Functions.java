@@ -11,6 +11,7 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Functions {
@@ -35,7 +36,7 @@ public class Functions {
 
 
 
-    public Boolean checker(List<Images> imlist, String cover, JLabel lbl,Timer timer) {
+    public Boolean checker(List<Images> imlist, String cover,Timer timer) {
         int x = 0;
         List<Images> list2 = new ArrayList<>();
         for (Images imagen : imlist) {
@@ -53,7 +54,7 @@ public class Functions {
                     if (url1 == imag2.getUrl()) {
                         imag.setStat("encontrada");
                         imag2.setStat("encontrada");
-                        win(imlist, lbl,timer);
+                       
                         
                         
                     } else {
@@ -66,6 +67,7 @@ public class Functions {
                     }
                 }
             }
+            win(imlist,timer);
 
         }
         return false;
@@ -88,8 +90,7 @@ public class Functions {
         }
     }
 
-    public void reset(List<Images> list, JLabel lbl, String cover) {
-        lbl.setVisible(false);
+    public void reset(List<Images> list, String cover) {
         for (Images imagen : list) {
             imagen.setStat("cerrada");
             imagen.getButn().setIcon(new ImageIcon(cover));
@@ -106,18 +107,30 @@ public class Functions {
         return secArray;
     }
 
-    public void win(List<Images> list, JLabel lbl,Timer timer) {
+    public void win(List<Images> list,Timer timer) {
         int x = 0;
         for (Images imagen : list) {
             if (imagen.getStat() == "encontrada") {
                 x++;
             }
             if (x == 18) {
-                lbl.setVisible(true);
                 timer.cancel();
+                JOptionPane.showMessageDialog(null,"GANASTE!!");
                 
             }
         }
+    }
+    
+    public void btndisable(JButton[] btns) {
+    	for(JButton btn :Arrays.asList(btns)) {
+    		btn.setEnabled(false);
+    	}
+    }
+    	
+    	public void btnenable(JButton[] btns) {
+        	for(JButton btn :Arrays.asList(btns)) {
+        		btn.setEnabled(true);
+        	}
     }
 
 

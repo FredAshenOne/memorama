@@ -8,7 +8,7 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					window frame = new window();
+					Window frame = new Window();
 					frame.setVisible(false);
 					Menu frame2 = new Menu();
 					frame2.setVisible(true);

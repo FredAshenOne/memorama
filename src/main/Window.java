@@ -7,16 +7,17 @@ import java.util.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.sound.sampled.AudioInputStream;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 
-public class window extends JFrame implements ActionListener {
-    int contadorh,contadorm,contadors,dificultad;
+public class Window extends JFrame implements ActionListener {
+    int contadorh,contadorm,contadors,contadorms,dificultad;
     Timer gtimer;
-
 
     private static final long serialVersionUID = 1L;
     int[] ids = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18};
@@ -33,12 +34,12 @@ public class window extends JFrame implements ActionListener {
     public String[] images3 = {"marv/1.png","marv/2.png","marv/3.png","marv/4.png","marv/5.png","marv/6.png","marv/7.png","marv/8.png","marv/9.png","marv/10.png",
     		"marv/11.png","marv/12.png","marv/13.png","marv/14.png","marv/15.png","marv/16.png","marv/17.png","marv/18.png"};
     public String cover;
-    public JLabel lblGanaste,chrono = new JLabel();
+    public JLabel chrono = new JLabel();
     List<Images> imgs = new ArrayList<>();
     Functions f = new Functions();
     public JPanel pane;
 
-    public window() {
+    public Window() {
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 928, 658);
@@ -165,29 +166,24 @@ public class window extends JFrame implements ActionListener {
         btns[17].setIcon(new ImageIcon(cover));
 
 
-        lblGanaste = new JLabel("GANASTE!!");
-        lblGanaste.setFont(new Font("Yu Gothic UI", Font.ITALIC, 14));
-        lblGanaste.setHorizontalAlignment(SwingConstants.CENTER);
-        lblGanaste.setBounds(333, 6, 224, 28);
-        lblGanaste.setVisible(false);
-        contentPane.add(lblGanaste);
-        
-        regresar = new JButton("Return");
-        regresar.setFont(new Font("Yu Gothic Light", Font.PLAIN, 12));
-        regresar.setBounds(813, 587, 89, 23);
-        contentPane.add(regresar);
-        regresar.addActionListener(this);
-        
-        nuevoJuego = new JButton("New Game");
-        nuevoJuego.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 9));
-        nuevoJuego.setBounds(714, 587, 89, 23);
-        contentPane.add(nuevoJuego);
+       
+
         
         chrono = new JLabel("");
         chrono.setBounds(10, 6, 209, 28);
         contentPane.add(chrono);
-        nuevoJuego.addActionListener(this);
-
+        
+        regresar = new JButton();
+        regresar.setFont(new Font("Yu Gothic Light", Font.PLAIN, 11));
+        regresar.setText("Return");
+        regresar.setBounds(750, 587, 152, 30);
+        contentPane.add(regresar);
+        
+        nuevoJuego = new JButton();
+        nuevoJuego.setFont(new Font("Yu Gothic UI Light", Font.PLAIN, 11));
+        nuevoJuego.setText("New Game");
+        nuevoJuego.setBounds(588, 587, 152, 30);
+        contentPane.add(nuevoJuego);
 
     }
 
@@ -196,90 +192,90 @@ public class window extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
        if (e.getSource() == btns[0]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[0]));
             }
         } else if (e.getSource() == btns[1]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[1]));
 
             }
         } else if (e.getSource() == btns[2]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[2]));
 
             }
         } else if (e.getSource() == btns[3]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[3]));
 
             }
         } else if (e.getSource() == btns[4]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[4]));
 
             }
         } else if (e.getSource() == btns[5]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[5]));
             }
             
         } else if (e.getSource() == btns[6]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[6]));
             }
         } else if (e.getSource() == btns[7]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[7]));
 
             }
         } else if (e.getSource() == btns[8]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[8]));
 
             }
         } else if (e.getSource() == btns[9]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[9]));
 
             }
         } else if (e.getSource() == btns[10]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[10]));
 
             }
         } else if (e.getSource() == btns[11]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[11]));
 
             }
         } else if (e.getSource() == btns[12]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[12]));
 
             }
         } else if (e.getSource() == btns[13]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[13]));
 
             }
         } else if (e.getSource() == btns[14]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[14]));
 
             }
         } else if (e.getSource() == btns[15]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[15]));
 
             }
         } else if (e.getSource() == btns[16]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[16]));
 
             }
         } else if (e.getSource() == btns[17]) {
-            if (f.checker(imgs, cover, lblGanaste,gtimer)) {
+            if (f.checker(imgs, cover,gtimer)) {
                 f.painter(f.btnfinder(imgs, btns[17]));
 
             }
@@ -289,9 +285,9 @@ public class window extends JFrame implements ActionListener {
 
     }
 
-    public void start(String[] str, JButton[] btns, JLabel lbl, JPanel pane) {
-    	lbl.setVisible(false);
+    public void start(String[] str, JButton[] btns, JPanel pane) {
         pane.setVisible(true);
+        f.btnenable(btns);
         contadorm = 0;
         contadors = 0;
         contadorh = 0;
@@ -305,7 +301,7 @@ public class window extends JFrame implements ActionListener {
             imgs.add(img2);
         }
         Collections.shuffle(imgs);
-        f.reset(imgs,lblGanaste,cover);
+        f.reset(imgs,cover);
 
 
         
@@ -317,21 +313,57 @@ public class window extends JFrame implements ActionListener {
                     String stconts = String.valueOf(contadors);
                     String stcontm = String.valueOf(contadorm);
                     String stconth = String.valueOf(contadorh);
+                    String stcontms = String.valueOf(contadorms);
                     chrono.setText(stconth+":"+stcontm+":"+stconts);
-                    contadors++;
-                    if(contadors == 60) {
-                        contadors=0;
-                        contadorm++;
-                        if(contadorm == 60) {
-                            contadorm = 0;
-                            contadorh++;
-                        }
+                    contadorms++;
+                    if(contadorms > 99) {
+                    	contadorms=0;
+                    	contadors++;
+                    	
+                    	if(contadors > 60) {
+                    		contadors=0;
+                    		contadorm++;
+                    		if(contadorm > 60) {
+                    			contadorm = 0;
+                    			contadorh++;
+                    		}
+                    	}
                     }
-                }
+                    switch(dificultad) {
+                    case 1:
+                    	if(contadorm == 3 && contadorms == 1) {
+                    		f.btndisable(btns);
+                    		gtimer.cancel();
+                    		JOptionPane.showMessageDialog(null,"PERDISTE!!");
+                    	
+                    	}
+                    	break;
+                    case 2:
+                    	if(contadorm == 1 && contadorms == 1) {
+                    		f.btndisable(btns);
+                    		gtimer.cancel();
+                    		JOptionPane.showMessageDialog(null,"PERDISTE!!");
+                        	}
+                    	break;
+                    case 3:
+                    	if(contadors == 30 && contadorms == 1) {
+                    		f.btndisable(btns);
+                    		gtimer.cancel();
+                    		JOptionPane.showMessageDialog(null,"PERDISTE!!");
+                        	}
+                    	break;
+                    default:
+                    	if(contadorh == 24 && contadorms == 1) {
+                    		f.btndisable(btns);
+                        	gtimer.cancel();
+                        	}
+                    	break;
+                    }
+                 }
             };
 
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(timerTask,10,1000);
+        timer.scheduleAtFixedRate(timerTask,0,10);
         gtimer = timer;
         }else{
             gtimer.cancel();
@@ -344,21 +376,57 @@ public class window extends JFrame implements ActionListener {
                     String stconts = String.valueOf(contadors);
                     String stcontm = String.valueOf(contadorm);
                     String stconth = String.valueOf(contadorh);
+                    String stcontms = String.valueOf(contadorms);
                     chrono.setText(stconth+":"+stcontm+":"+stconts);
-                    contadors++;
-                    if(contadors == 60) {
-                        contadors=0;
-                        contadorm++;
-                        if(contadorm == 60) {
-                            contadorm = 0;
-                            contadorh++;
-                        }
+                    contadorms++;
+                    if(contadorms > 100) {
+                    	contadorms=0;
+                    	contadors++;
+                    		if(contadors > 60) {
+                    			contadors=0;
+                    			contadorm++;
+                    			if(contadorm > 60) {
+                    				contadorm = 0;
+                    				contadorh++;
+                    			}
+                    		}
+                    	}
+                    
+                    switch(dificultad) {
+                    case 1:
+                    	if(contadorm == 3 && contadorms == 1) {
+                    		f.btndisable(btns);
+                    		gtimer.cancel();
+                    		JOptionPane.showMessageDialog(null,"PERDISTE!!");
+                    	}
+                    	break;
+                    case 2:
+                    	if(contadorm == 1 && contadorms == 1) {
+                    		f.btndisable(btns);
+                    		gtimer.cancel();
+                    		JOptionPane.showMessageDialog(null,"PERDISTE!!");
+                        	}
+                    	break;
+                    case 3:
+                    	if(contadors == 30 && contadorms == 1) {
+                    		f.btndisable(btns);
+                    		gtimer.cancel();
+                    		JOptionPane.showMessageDialog(null,"PERDISTE!!");
+                        	}
+                    	break;
+                    default:
+                    	if(contadorh == 24 && contadorms == 1) {
+                    		f.btndisable(btns);
+                        	gtimer.cancel();
+
+                        	}
+                    	break;
                     }
                 }
             };
 
             Timer timer = new Timer();
-            timer.scheduleAtFixedRate(timerTask,10,1000);
+            timer.scheduleAtFixedRate(timerTask,0,10);
             gtimer = timer;
 
         }
