@@ -7,7 +7,6 @@ import java.util.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.sound.sampled.AudioInputStream;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -16,27 +15,38 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 
 public class Window extends JFrame implements ActionListener {
-    int contadorh,contadorm,contadors,contadorms,dificultad;
-    Timer gtimer;
+    
+	int contadorh,contadorm,contadors,contadorms,dificultad;
+    
+	Timer gtimer;
 
     private static final long serialVersionUID = 1L;
+    
     int[] ids = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18};
+    
     private JPanel contentPane;
+    
     public JButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17, btn18;
     JButton[] btns = {btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17, btn18};
     JButton reset,nuevoJuego,regresar;
+    
     public String[] images = {
             "views/i (1).png", "views/i (2).png", "views/i (3).png", "views/i (4).png", "views/i (5).png", "views/i (6).png",
             "views/i (7).png", "views/i (8).png", "views/i (9).png", "views/i (10).png", "views/i (11).png", "views/i (12).png",
             "views/i (13).png", "views/i (14).png", "views/i (15).png", "views/i (16).png", "views/i (17).png", "views/i (18).png", "views/i (19).png"};
+    
     public String[] images2 = {"cr/1.png", "cr/2.png", "cr/3.png", "cr/4.png", "cr/5.png", "cr/6.png", "cr/7.png", "cr/8.png", "cr/9.png",
             "cr/10.png", "cr/11.png", "cr/12.png", "cr/13.png", "cr/14.png", "cr/15.png", "cr/16.png", "cr/17.png", "cr/18.png"};
+    
     public String[] images3 = {"marv/1.png","marv/2.png","marv/3.png","marv/4.png","marv/5.png","marv/6.png","marv/7.png","marv/8.png","marv/9.png","marv/10.png",
     		"marv/11.png","marv/12.png","marv/13.png","marv/14.png","marv/15.png","marv/16.png","marv/17.png","marv/18.png"};
+    
     public String cover;
-    public JLabel chrono = new JLabel();
+    
+    public JLabel chrono,background = new JLabel();
     List<Images> imgs = new ArrayList<>();
     Functions f = new Functions();
+    
     public JPanel pane;
 
     public Window() {
@@ -184,6 +194,10 @@ public class Window extends JFrame implements ActionListener {
         nuevoJuego.setText("New Game");
         nuevoJuego.setBounds(588, 587, 152, 30);
         contentPane.add(nuevoJuego);
+        
+        background = new JLabel("");
+        background.setBounds(0, 0, 900, 831);
+        contentPane.add(background);
 
     }
 

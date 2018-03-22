@@ -1,23 +1,27 @@
 package main;
 
 
+import javax.sound.sampled.AudioSystem;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JRadioButton;
-import java.awt.Font;
+import javax.sound.sampled.*;
 
+import java.io.*;
 
 public class Menu extends JFrame implements ActionListener {
-
+    File file;
+    Clip clip;
 
 	private static final long serialVersionUID = 1L;
 	Window w = new Window();
@@ -125,6 +129,7 @@ public class Menu extends JFrame implements ActionListener {
                 w.start(w.images, w.btns, w.pane);
                 Collections.shuffle(f.imagenes);
                 w.setVisible(true);
+                music("music/champions.wav");
                 this.setVisible(false);
 
             } else if (e.getSource() == cr) {
@@ -134,17 +139,22 @@ public class Menu extends JFrame implements ActionListener {
                 w.start(w.images2, w.btns, w.pane);
                 Collections.shuffle(f.imagenes);
                 w.setVisible(true);
+                music("music/crmenutheme.wav");
+                w.background.setIcon(new ImageIcon("views/championswp.png"));
                 this.setVisible(false);
             
             
 
         }else if (e.getSource() == marv) {
-            w.cover = "marv/logo.png";
+            w.cover = "marv/marvcov.png";
+
             f.randomizer(w.images3);
             choice = 3;
             w.start(w.images3, w.btns, w.pane);
             Collections.shuffle(f.imagenes);
             w.setVisible(true);
+
+            music("music/marvel.wav");
             this.setVisible(false);
         
         
@@ -154,6 +164,7 @@ public class Menu extends JFrame implements ActionListener {
         	this.setVisible(true);
         	w.gtimer.cancel();
         	w.gtimer.purge();
+        	clip.stop();
         }else if(e.getSource()==w.nuevoJuego) {
         	if (choice == 1) {
                 w.cover = "views/mad.png";
@@ -167,7 +178,7 @@ public class Menu extends JFrame implements ActionListener {
                 w.start(w.images2, w.btns, w.pane);
 
             }else if (choice == 3) {
-            	 w.cover = "marv/logo.png";
+            	 w.cover = "marv/marvcov.png";
                  f.randomizer(w.images3);
                  w.start(w.images3, w.btns, w.pane);
 
@@ -177,6 +188,20 @@ public class Menu extends JFrame implements ActionListener {
         
         
         }
+    
+    	public void music(String url) {
+    		try{
+    		    file = new File(url);
+    		    clip = AudioSystem.getClip();
+    		    clip.open(AudioSystem.getAudioInputStream(file));
+    		    clip.start();
+    		    clip.loop(clip.LOOP_CONTINUOUSLY);
+
+
+            }catch(Exception e){
+    		    System.err.println(e.getMessage());
+            }
+    	}
     }
 
 
