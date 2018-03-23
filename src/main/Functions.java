@@ -37,17 +37,18 @@ public class Functions {
 
 
     public Boolean checker(List<Images> imlist, String cover,Timer timer,int contadorm,int contadors,int contadorms) {
-        int x = 0;
+        
         List<Images> list2 = new ArrayList<>();
+        
         for (Images imagen : imlist) {
             if (imagen.getStat() == "abierta") {
-                x++;
+                
                 list2.add(imagen);
             }
         }
-        if (x < 2) {
+        if (list2.size() < 2) {
             return true;
-        } else if (x == 2) {
+        } else if (list2.size() == 2) {
             for (Images imag : list2) {
                 String url1 = imag.getUrl();
                 for (Images imag2 : list2) {

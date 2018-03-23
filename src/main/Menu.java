@@ -126,9 +126,11 @@ public class Menu extends JFrame implements ActionListener {
                 w.cover = "views/mad.png";
                 f.randomizer(w.images);
                 choice = 1;
+
                 w.start(w.images, w.btns, w.pane);
                 Collections.shuffle(f.imagenes);
                 w.setVisible(true);
+                w.background.setIcon(new ImageIcon("views/championswp.png"));
                 music("music/champions.wav");
                 this.setVisible(false);
 
@@ -136,18 +138,20 @@ public class Menu extends JFrame implements ActionListener {
                 w.cover = "cr/logo.png";
                 choice = 2;
                 f.randomizer(w.images2);
+                w.background.setIcon(new ImageIcon("cr/crwp.png"));
                 w.start(w.images2, w.btns, w.pane);
                 Collections.shuffle(f.imagenes);
                 w.setVisible(true);
                 music("music/crmenutheme.wav");
-                w.background.setIcon(new ImageIcon("views/championswp.png"));
+                
+
                 this.setVisible(false);
             
             
 
         }else if (e.getSource() == marv) {
             w.cover = "marv/marvcov.png";
-
+            w.background.setIcon(new ImageIcon("marv/marvwp.png"));
             f.randomizer(w.images3);
             choice = 3;
             w.start(w.images3, w.btns, w.pane);
@@ -184,6 +188,8 @@ public class Menu extends JFrame implements ActionListener {
 
             }
             Collections.shuffle(f.imagenes);
+        }else if(e.getSource()== w.back) {
+        	clip.stop();
         }
         
         
@@ -196,7 +202,6 @@ public class Menu extends JFrame implements ActionListener {
     		    clip.open(AudioSystem.getAudioInputStream(file));
     		    clip.start();
     		    clip.loop(clip.LOOP_CONTINUOUSLY);
-
 
             }catch(Exception e){
     		    System.err.println(e.getMessage());

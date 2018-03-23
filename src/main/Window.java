@@ -12,7 +12,11 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
+
+import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Window extends JFrame implements ActionListener {
     
@@ -28,7 +32,7 @@ public class Window extends JFrame implements ActionListener {
     
     public JButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17, btn18;
     JButton[] btns = {btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17, btn18};
-    JButton reset,nuevoJuego,regresar;
+    JButton reset,nuevoJuego,regresar,back,mute;
     
     public String[] images = {
             "views/i (1).png", "views/i (2).png", "views/i (3).png", "views/i (4).png", "views/i (5).png", "views/i (6).png",
@@ -62,11 +66,12 @@ public class Window extends JFrame implements ActionListener {
 
 
         pane = new JPanel();
-        pane.setBounds(10, 45, 892, 531);
+        pane.setBounds(10, 45, 912, 531);
         contentPane.add(pane);
         pane.setLayout(null);
         pane.setVisible(false);
-
+        pane.setBackground(new Color(0,0,0,0));
+        
         btns[0] = new JButton();
         btns[0].setBounds(0, 0, 140, 165);
         pane.add(btns[0]);
@@ -197,8 +202,11 @@ public class Window extends JFrame implements ActionListener {
         contentPane.add(nuevoJuego);
         
         background = new JLabel("");
-        background.setBounds(0, 0, 900, 831);
+        background.setBounds(0, 6, 922, 623);
         contentPane.add(background);
+        chrono.setForeground(Color.white);
+        
+       
 
     }
 
@@ -445,6 +453,7 @@ public class Window extends JFrame implements ActionListener {
             gtimer = timer;
 
         }
+        
         
     }
 }
