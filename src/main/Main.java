@@ -8,10 +8,8 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Window frame = new Window();
-					frame.setVisible(false);
-					Menu frame2 = new Menu();
-					frame2.setVisible(true);
+						Menu frame = new Menu();
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

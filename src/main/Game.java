@@ -18,7 +18,7 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Window extends JFrame implements ActionListener {
+public class Game extends JFrame implements ActionListener {
     
 	int contadorh,contadorm,contadors,contadorms,dificultad;
     
@@ -35,25 +35,25 @@ public class Window extends JFrame implements ActionListener {
     JButton reset,nuevoJuego,regresar,back,mute;
     
     public String[] images = {
-            "views/i (1).png", "views/i (2).png", "views/i (3).png", "views/i (4).png", "views/i (5).png", "views/i (6).png",
-            "views/i (7).png", "views/i (8).png", "views/i (9).png", "views/i (10).png", "views/i (11).png", "views/i (12).png",
-            "views/i (13).png", "views/i (14).png", "views/i (15).png", "views/i (16).png", "views/i (17).png", "views/i (18).png", "views/i (19).png"};
+            "views/mad/i (1).png", "views/mad/i (2).png", "views/mad/i (3).png", "views/mad/i (4).png", "views/mad/i (5).png", "views/mad/i (6).png",
+            "views/mad/i (7).png", "views/mad/i (8).png", "views/mad/i (9).png", "views/mad/i (10).png", "views/mad/i (11).png", "views/mad/i (12).png",
+            "views/mad/i (13).png", "views/mad/i (14).png", "views/mad/i (15).png", "views/mad/i (16).png", "views/mad/i (17).png", "views/mad/i (18).png", "views/mad/i (19).png"};
     
-    public String[] images2 = {"cr/1.png", "cr/2.png", "cr/3.png", "cr/4.png", "cr/5.png", "cr/6.png", "cr/7.png", "cr/8.png", "cr/9.png",
-            "cr/10.png", "cr/11.png", "cr/12.png", "cr/13.png", "cr/14.png", "cr/15.png", "cr/16.png", "cr/17.png", "cr/18.png"};
+    public String[] images2 = {"views/cr/1.png", "views/cr/2.png", "views/cr/3.png", "views/cr/4.png", "views/cr/5.png", "views/cr/6.png", "views/cr/7.png", "views/cr/8.png", "views/cr/9.png",
+            "views/cr/10.png", "views/cr/11.png", "views/cr/12.png", "views/cr/13.png", "views/cr/14.png", "views/cr/15.png", "views/cr/16.png", "views/cr/17.png", "views/cr/18.png"};
     
-    public String[] images3 = {"marv/1.png","marv/2.png","marv/3.png","marv/4.png","marv/5.png","marv/6.png","marv/7.png","marv/8.png","marv/9.png","marv/10.png",
-    		"marv/11.png","marv/12.png","marv/13.png","marv/14.png","marv/15.png","marv/16.png","marv/17.png","marv/18.png"};
+    public String[] images3 = {"views/marv/1.png","views/marv/2.png","views/marv/3.png","views/marv/4.png","views/marv/5.png","views/marv/6.png","views/marv/7.png","views/marv/8.png","views/marv/9.png","views/marv/10.png",
+    		"views/marv/11.png","views/marv/12.png","views/marv/13.png","views/marv/14.png","views/marv/15.png","views/marv/16.png","views/marv/17.png","views/marv/18.png"};
     
     public String cover;
     
     public JLabel chrono,background = new JLabel();
-    List<Images> imgs = new ArrayList<>();
+    List<Card> imgs = new ArrayList<>();
     Functions f = new Functions();
     
     public JPanel pane;
 
-    public Window() {
+    public Game() {
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 928, 658);
@@ -318,8 +318,8 @@ public class Window extends JFrame implements ActionListener {
         Collections.shuffle(Arrays.asList(str));
         Collections.shuffle(Arrays.asList(btns));
         for (int i = 0; i < 9; i++) {
-            Images img = new Images(ids[i], str[i], "cerrada", btns[i]);
-            Images img2 = new Images(ids[i + 9], f.secArray(str)[i], "cerrada", btns[i + 9]);
+            Card img = new Card(ids[i], str[i], "cerrada", btns[i]);
+            Card img2 = new Card(ids[i + 9], f.secArray(str)[i], "cerrada", btns[i + 9]);
             imgs.add(img);
             imgs.add(img2);
         }

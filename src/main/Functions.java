@@ -16,31 +16,31 @@ import javax.swing.JPanel;
 
 public class Functions {
     int[] ids = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18};
-    List<Images> imagenes = new ArrayList<>();
+    List<Card> imagenes = new ArrayList<>();
 
     public void randomizer(String[] x) {
         Collections.shuffle(Arrays.asList(x));
     }
 
-    public List<Images> getImgs() {
+    public List<Card> getImgs() {
         return imagenes;
     }
-    public void setImagenes(List<Images> imagenes) {
+    public void setImagenes(List<Card> imagenes) {
         this.imagenes = imagenes;
     }
 
-    public void changer(Images i) {
+    public void changer(Card i) {
 
     }
 
 
 
 
-    public Boolean checker(List<Images> imlist, String cover,Timer timer,int contadorm,int contadors,int contadorms) {
+    public Boolean checker(List<Card> imlist, String cover,Timer timer,int contadorm,int contadors,int contadorms) {
         
-        List<Images> list2 = new ArrayList<>();
+        List<Card> list2 = new ArrayList<>();
         
-        for (Images imagen : imlist) {
+        for (Card imagen : imlist) {
             if (imagen.getStat() == "abierta") {
                 
                 list2.add(imagen);
@@ -49,9 +49,9 @@ public class Functions {
         if (list2.size() < 2) {
             return true;
         } else if (list2.size() == 2) {
-            for (Images imag : list2) {
+            for (Card imag : list2) {
                 String url1 = imag.getUrl();
-                for (Images imag2 : list2) {
+                for (Card imag2 : list2) {
                     if (url1 == imag2.getUrl()) {
                         imag.setStat("encontrada");
                         imag2.setStat("encontrada");
@@ -74,8 +74,8 @@ public class Functions {
         return false;
     }
 
-    public Images btnfinder(List<Images> list, JButton btn) {
-        for (Images imagen : list) {
+    public Card btnfinder(List<Card> list, JButton btn) {
+        for (Card imagen : list) {
             if (imagen.getButn() == btn) {
                 return imagen;
             }
@@ -84,15 +84,15 @@ public class Functions {
         return null;
     }
 
-    public void painter(Images img) {
+    public void painter(Card img) {
         if (img.getStat() == "cerrada") {
             img.getButn().setIcon(new ImageIcon(img.getUrl()));
             img.setStat("abierta");
         }
     }
 
-    public void reset(List<Images> list, String cover) {
-        for (Images imagen : list) {
+    public void reset(List<Card> list, String cover) {
+        for (Card imagen : list) {
             imagen.setStat("cerrada");
             imagen.getButn().setIcon(new ImageIcon(cover));
 
@@ -108,9 +108,9 @@ public class Functions {
         return secArray;
     }
 
-    public void win(List<Images> list,Timer timer,int contadorm,int contadors,int contadorms) {
+    public void win(List<Card> list,Timer timer,int contadorm,int contadors,int contadorms) {
         int x = 0;
-        for (Images imagen : list) {
+        for (Card imagen : list) {
             if (imagen.getStat() == "encontrada") {
                 x++;
             }

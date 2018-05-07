@@ -2,17 +2,18 @@ package main;
 
 import javax.swing.JButton;
 
-public class Images {
+public class Card {
 	
 	private int id;
 	private String url,stat;
 	private JButton butn;
 	
-	public Images(int id,String url, String stat,JButton butn) {
+	public Card(int id,String url, String stat,JButton butn) {
 		this.id = id;
+		this.butn = butn;
 		this.url = url;
 		this.stat = stat;
-		this.butn = butn;
+
 	}
 	
 
@@ -20,11 +21,9 @@ public class Images {
 		return butn;
 	}
 
-
 	public void setButn(JButton butn) {
 		this.butn = butn;
 	}
-
 
 	public int getId() {
 		return id;
@@ -49,7 +48,5 @@ public class Images {
 	public void setStat(String stat) {
 		this.stat = stat;
 	}
-
-
 
 }

@@ -24,10 +24,10 @@ public class Menu extends JFrame implements ActionListener {
     Clip clip;
 
 	private static final long serialVersionUID = 1L;
-	Window w = new Window();
+	Game w = new Game();
     Functions f = new Functions();
     private JPanel contentPane;
-    List<Images> listaIm = new ArrayList<>();
+    List<Card> listaIm = new ArrayList<>();
 
     JButton start = new JButton();
 
@@ -45,20 +45,26 @@ public class Menu extends JFrame implements ActionListener {
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
+        contentPane.setOpaque(true);
+        contentPane.setBackground(Color.white);
 
         mad = new JButton();
+        mad.setBorder(null);
         mad.setBounds(21, 37, 109, 100);
-        mad.setIcon(new ImageIcon("views/madlogo.png"));
+        mad.setIcon(new ImageIcon("views/mad/madlogo.png"));
         contentPane.add(mad);
         mad.addActionListener(this);
+        mad.setBackground(null);
 
         cr = new JButton();
         cr.setBounds(140, 37, 109, 100);
         contentPane.add(cr);
-        cr.setIcon(new ImageIcon("cr/logo2.png"));
+        cr.setIcon(new ImageIcon("views/cr/logo2.png"));
         setResizable(false);
         cr.addActionListener(this);
-
+        cr.setBackground(null);
+        cr.setBorder(null);
+        
         select.add(cr);
         select.add(mad);
         
@@ -66,7 +72,8 @@ public class Menu extends JFrame implements ActionListener {
         marv.setBounds(259, 37, 109, 100);
         contentPane.add(marv);
         marv.addActionListener(this);
-        marv.setIcon(new ImageIcon("marv/logo.png"));
+        marv.setIcon(new ImageIcon("views/marv/logo.png"));
+        marv.setBorder(null);
         
         JRadioButton easy = new JRadioButton("Facil");
         easy.setBounds(21, 7, 57, 23);
@@ -123,26 +130,26 @@ public class Menu extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == mad) {
            
-                w.cover = "views/mad.png";
+                w.cover = "views/mad/mad.png";
                 f.randomizer(w.images);
                 choice = 1;
 
                 w.start(w.images, w.btns, w.pane);
                 Collections.shuffle(f.imagenes);
                 w.setVisible(true);
-                w.background.setIcon(new ImageIcon("views/championswp.png"));
-                music("music/champions.wav");
+                w.background.setIcon(new ImageIcon("views/mad/championswp.png"));
+                music("views/music/champions.wav");
                 this.setVisible(false);
 
             } else if (e.getSource() == cr) {
-                w.cover = "cr/logo.png";
+                w.cover = "views/cr/logo.png";
                 choice = 2;
                 f.randomizer(w.images2);
-                w.background.setIcon(new ImageIcon("cr/crwp.png"));
+                w.background.setIcon(new ImageIcon("views/cr/crwp.png"));
                 w.start(w.images2, w.btns, w.pane);
                 Collections.shuffle(f.imagenes);
                 w.setVisible(true);
-                music("music/crmenutheme.wav");
+                music("views/music/crmenutheme.wav");
                 
 
                 this.setVisible(false);
@@ -150,15 +157,15 @@ public class Menu extends JFrame implements ActionListener {
             
 
         }else if (e.getSource() == marv) {
-            w.cover = "marv/marvcov.png";
-            w.background.setIcon(new ImageIcon("marv/marvwp.png"));
+            w.cover = "views/marv/marvcov.png";
+            w.background.setIcon(new ImageIcon("views/marv/marvwp.png"));
             f.randomizer(w.images3);
             choice = 3;
             w.start(w.images3, w.btns, w.pane);
             Collections.shuffle(f.imagenes);
             w.setVisible(true);
 
-            music("music/marvel.wav");
+            music("views/music/marvel.wav");
             this.setVisible(false);
         
         
@@ -171,18 +178,18 @@ public class Menu extends JFrame implements ActionListener {
         	clip.stop();
         }else if(e.getSource()==w.nuevoJuego) {
         	if (choice == 1) {
-                w.cover = "views/mad.png";
+                w.cover = "views/mad/mad.png";
                 f.randomizer(w.images);
                 w.start(w.images, w.btns, w.pane);
 
 
             } else if (choice == 2) {
-                w.cover = "cr/logo.png";
+                w.cover = "views/cr/logo.png";
                 f.randomizer(w.images2);
                 w.start(w.images2, w.btns, w.pane);
 
             }else if (choice == 3) {
-            	 w.cover = "marv/marvcov.png";
+            	 w.cover = "views/marv/marvcov.png";
                  f.randomizer(w.images3);
                  w.start(w.images3, w.btns, w.pane);
 
